@@ -15,7 +15,8 @@ int  isEmpty(IntegerList *);
 int  size(IntegerList *);
 void printList(IntegerList *);
 void insertElement(IntegerList **, int);
-int search(IntegerList*, int);
+void removeElement(IntegerList **, int);
+int search(IntegerList *, int);
 
 #endif
 
