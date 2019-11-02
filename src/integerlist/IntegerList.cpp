@@ -5,52 +5,6 @@
 
 using namespace std;
 
-// IntegerList * createElement(int);
-
-IntegerList * createElement(int element) {
-
-  IntegerList *new_node;
-  new_node = (IntegerList *) malloc(sizeof(IntegerList *)); 
-  if (new_node == NULL) {
-      printf ("No memory left.\n");
-      exit(EXIT_FAILURE);
-  }
-  new_node->data = element;
-  new_node->next = NULL;
-  return new_node;
-}
-
-
-// int  isEmpty(IntegerList *);
-
-int isEmpty(IntegerList * integerList) {
-  return (integerList != NULL)? 0 : 1;
-}
-
-// int  size(IntegerList *);
-
-int size(IntegerList * l){
-  int i = 0;
-
-  while (l) {
-    i++;
-    l = l->next;
-  }
-
-  return i;
-}
-
-// void printList(IntegerList *);
-
-void printList(IntegerList * ptr) {
-  while (ptr) {
-    cout << "Data: " << ptr->data << endl;
-    ptr = ptr->next;
-  }
-}
-
-
-// void insertElement(IntegerList **, int);
 void insertElement(IntegerList** l, int element) {
 
   IntegerList *new_node;
