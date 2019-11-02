@@ -71,17 +71,22 @@ void insertElement(IntegerList** l, int element) {
 }
 
 
+// to test or not to test empty list
+
 int removeElement(IntegerList** l, int index) {
 
   // Assume 1 <= index <= size(l)
 
   // locate
   IntegerList *prev = (IntegerList *) NULL;
-  IntegerList *ptr = * l;
-  int element;
+  IntegerList *ptr = *l;
+
+  if (isEmpty(*l)) {
+    return 0;         // empty list
+  }
 
   if (index == 1) {
-    element = ptr->data;
+    // element = ptr->data;
     (*l) = ptr->next;
   }
   else {
@@ -91,25 +96,29 @@ int removeElement(IntegerList** l, int index) {
      }
 
   // remove
-     element = ptr->data;
+     // element = ptr->data;
      prev->next = ptr->next;
   }
-  return element;
+  return 1; // removed element
 }
 
 
 
-/* Checks whether the value x is present in linked list */
-int search(IntegerList* head, int x)  
-{  
+/*  Checks whether the value x is present in linked list 
+ *  and returns index if found, or 0 
+ */
+
+int search(IntegerList* head, int x) {  
+
     IntegerList* current = head; // Initialize current  
+    int index = 0;
     while (current != NULL)  
     {  
+        index++;
         if (current->data == x)  
-            return 1;  
+            return index;  
         current = current->next;  
     }  
     return 0;  
 } 
-
 
